@@ -21,3 +21,18 @@ GLOBAL OPTIONS:
    --help, -h     show help
    --version, -v  print only the version (default: false)
 ```
+
+## Installation
+
+```sh
+wget https://github.com/szEvEz/kegwasher/releases/download/v0.0.1/kegwasher
+chmod +x kegwasher
+mv kegwasher /usr/local/bin/
+```
+
+## Usage
+
+```sh
+$ kegwasher --update --prune
+```
+
