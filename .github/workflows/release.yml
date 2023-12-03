@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.21.4
+
+    - name: Build binary
+      run: go build -o kegwasher github.com/szEvEz/kegwasher/cmd/kegwasher
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        files: |
+          kegwasher
+        token: ${{ secrets.GITHUB_TOKEN }}
+        release_name: Release ${{ github.event.release.tag_name }}
+        tag_name: ${{ github.event.release.tag_name }}
+        draft: false
+        prerelease: false
