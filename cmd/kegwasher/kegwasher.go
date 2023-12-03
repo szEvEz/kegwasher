@@ -17,7 +17,7 @@ func main() {
     }
     app := &cli.App{
         Name:  "kegwasher",
-        Version: "0.0.1",
+        Version: "v0.0.1",
         Usage: "Housekeeping for Homebrew",
 		Action:  cleanupAction,
         Flags: []cli.Flag{
