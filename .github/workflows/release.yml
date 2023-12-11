@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    runs-on: macos-latest
+    runs-on: macos-13
 
     steps:
     - name: Checkout code
@@ -19,9 +19,9 @@ jobs:
         go-version: 1.21.4
 
     - name: Build binary
-      run: go build -o kegwasher github.com/szEvEz/kegwasher/cmd/kegwasher
+      run: go build -o kegwasher-darwin-arm64 github.com/szEvEz/kegwasher/cmd/kegwasher
 
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        files: kegwasher
+        files: kegwasher-darwin-arm64

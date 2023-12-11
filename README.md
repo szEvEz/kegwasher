@@ -25,7 +25,7 @@ GLOBAL OPTIONS:
 ## Installation
 
 ```sh
-$ wget https://github.com/szEvEz/kegwasher/releases/download/v0.0.1/kegwasher
+$ wget -O kegwasher https://github.com/szEvEz/kegwasher/releases/download/v0.0.1/kegwasher-darwin-arm64
 $ chmod +x kegwasher
 $ mv kegwasher /usr/local/bin/
 ```
